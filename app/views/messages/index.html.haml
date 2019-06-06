@@ -1,32 +1,14 @@
 .flash-box
 .contents
   .contents-side
-    .header
-      %p.userName test  
-      %ul.userMenu
-        %li.userMenu__editUser
-        %li.userMenu__newGroup
-    .groups
-      .group
-        %p.group__groupName  グループ
-        %p.group__latestMessage  こんにちは
+    .side-header
+      %p.side-header__user-name test  
+      %ul.user-menu
+         %li.user-menu__edit-user
+         %li.user-menu__new-groups   
+    .contents-side__groups
+       
   .contents-main
-    .header
-      .currentGroup
-        .currentGroup__name 
-        %ul.memberList 
-          %li.memberList__member tomo
-      .edit-btn
-    .messages
-      .message
-        .message__info
-          %p.message__info__user test
-          %p.message__info__date  2019/05/25
-        .message__text
-    .form
-      .newMessage
-        %input(type="text" placeholder="メッセージをお書きください" class="inputBox")
-          .inputBox__image-label
-        .newMessage__btn
-        
-      
+    .contents-main__header
+    .contents-main__messages
+    .contents-main__from
