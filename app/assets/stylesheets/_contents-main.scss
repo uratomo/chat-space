@@ -1,6 +1,6 @@
 .contents-main{
   width:calc(100vw - 300px);
-  height:calc(100vh - 194px);
+  height:100vh;
   
   .header{
       
@@ -14,9 +14,9 @@
         color:$black;
         padding-bottom:15px;
       }
-      .membetList__member{
-      font-size:12px;
-      color:$grey;
+      .memberList__member{
+        font-size:12px;
+        color:$grey;
       }
     
      
@@ -33,12 +33,14 @@
       margin-top:28px;
       .btn{
         color:$skyblue;
+        text-decoration:none;
       }
       }
   }
   .messages{
     background-color:#fafafa;
     padding:0px 40px;
+    height:calc(100vh - 194px);
     
     .message{
       padding-top:46px;
@@ -46,7 +48,7 @@
         display:flex;
       
         &__user{
-         @include user(16px,$black);
+         @include user(16px,$littleblack);
          padding-bottom:15px;
         }
         &__date{
@@ -56,7 +58,8 @@
       }
       &__text{
         padding:10px 0px 40px;
-        
+        font-size:14px;
+        color:$littleblack;
       }
     }
     
@@ -67,20 +70,33 @@
     padding:20px 40px;
       height:50px;
       .newMessage{
+        position:relative;
         display:flex;
-        .inputBox{
-          height:50px;
-        }
-          &__imageLabel{
-
+          .inputBox{
+            width:100vw;
+            height:50px;     
+              &:placeholder-shown{
+                padding-left:10px;
+              }      
           }
-        &__btn{
-          color:$white;
-          padding:0px 30px;
-          background-color:$skyblue;
-          line-height:50px;
-          margin-left:15px;
+          .Contents__btn{
+            position:absolute;
+            right:130px;
+            top:10px;
+            color:$black;
+            font-size:20px; 
+            
+          }
 
+          
+        &__btn{
+            .btn{
+              color:$white;
+            padding:0px 30px;
+            background-color:$skyblue;
+            line-height:50px;
+            margin-left:15px;
+          }
         }  
       }
   }
