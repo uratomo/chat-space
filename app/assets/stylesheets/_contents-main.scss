@@ -1,0 +1,51 @@
+.contents-main{
+  width:100vh;
+  height:100vh;
+  .header{
+      padding:0px 40px 0px;
+    border-bottom:solid 1px #eeeeee;
+    .currentGroup{
+      padding-top:35px;
+      &__name{
+        font-size:20px;
+        color:#333333;
+        padding-bottom:15px;
+        position:relative;
+      }
+      .membetList__member{
+      font-size:12px;
+      color:#999999;
+      }
+    
+     
+    }
+    .edit-btn {
+      height:40px;
+      line-height:40px;
+      padding:0 20px;
+      color:skyblue;
+      border:solid 2px skyblue;
+      position:absolute;
+      right:40px;
+      }
+  }
+  .messages{
+    background-color:#fafafa;
+    .message{
+      padding-top:46px;
+      &__info{
+        display:flex;
+      
+        &__user{
+         @include test-user;
+         padding-bottom:15px;
+        }
+        &__date{
+          @include date;
+          
+        }
+      }
+    }
+    
+  }
+}

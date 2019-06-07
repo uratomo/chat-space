@@ -1,5 +1,18 @@
 @import "./reset";
 @import "./variable";
 @import "font-awesome";
+@import "./mixin";
 @import "./contents-side";
 @import "contents-main";
+
+.flashBox{
+  font-size: 12px;
+  text-align:center;
+  color:$white;
+  background:$skyblue;
+}
+.contents{
+  height:100vh;
+  display:flex;
+}
+

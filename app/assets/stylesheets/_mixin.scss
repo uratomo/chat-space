@@ -1,0 +1,11 @@
+@mixin test-user{
+  font-size:16px;
+  color:#333333;
+  font-weight:bold;
+}
+
+@mixin date{
+  font-size:12px;
+  color:#999999;  
+  margin-left:10px; 
+      }
