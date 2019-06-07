@@ -5,11 +5,12 @@
       %p.userName test  
       %ul.userMenu
         %li.userMenu__editUser
-          =link_to "" do
-            =fa_icon "fa-edit"
+          =link_to "https://www.sample.com/", class: "Contents__btn" do
+            = fa_icon 'edit'
         %li.userMenu__newGroup
-        =fa_icon "fa-cog"
-    .groups
+          =link_to "https://www.sample.com/", class: "Contents__btn" do
+            = fa_icon 'cog'
+    .groups  
       .group
         %p.group__groupName  グループ
         %p.group__latestMessage  こんにちは
@@ -22,7 +23,9 @@
         .currentGroup__name test_group
         %ul.memberList 
           %li.memberList__member Member:tomo
-      .edit-btn Edit
+      .edit-btn 
+        =link_to  "https://www.sample.com/", class: "btn" do
+          Edit
     .messages
       .message
         .message__info
