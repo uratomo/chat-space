@@ -40,6 +40,9 @@
       .newMessage
         %input(type="text" placeholder="メッセージをお書きください" class="inputBox")
           .inputBox__imageLabel
-        .newMessage__btn
+            =link_to "https://www.sample.com/", class: "Contents__btn" do
+              = fa_icon 'image'
+        .newMessage__btn 
+          %input(type="submit" value="SEND" class="btn")
         
       
