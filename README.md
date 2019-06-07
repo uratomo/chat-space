@@ -33,6 +33,7 @@ Things you may want to cover:
 ### Association
 - has_many :groups,through :members
 - has_many :members
+- has_many :messages
 
 ## groups テーブル
 |Column|Type   |Options                    |
@@ -41,19 +42,20 @@ Things you may want to cover:
 |name  |string |null:false                 |
 ## Association
 - has_many :users,through :members
--  has_many :members
+- has_many :members
+- has_many :messages
 
 ## messages テーブル
-|Column  |Type|Options|
-|--------|-------|-----------|
-|id      |integer|null: false|
-|text    |text   |null: true |
-|image   |string |null: true |
-|group_id|integer|null:false |
-|user_id |integer|null:false |
+|Column  |Type   |Options                     |
+|--------|-------|----------------------------|
+|id      |integer|null: false                 |
+|text    |text   |null: true                  |
+|image   |string |null: true                  |
+|group_id|integer|null:false ,foreign_key:true|
+|user_id |integer|null:false ,foreign_key:true|
 ## Association
-- belongs_to :users
-- belongs_to :messages
+- belongs_to :user
+- belongs_to :group
 
 ## members 中間テーブル
 |Column |Type|Options                            |
