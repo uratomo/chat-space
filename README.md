@@ -24,24 +24,42 @@ Things you may want to cover:
 * ...
 
 ## users テーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|null: false,foreign_key: true|
-|name|string|null: false|
-
+|Column    |Type|Options|
+|----------|-------|-----------------------------|
+|id        |integer|null: false,foreign_key: true|
+|nickname  |string |null: false,unique:true      |
+|mail      |string |null: false,unique:true      |
+|password  |integer|null: false                  |
+### Association
+- has_many :groups,through :members
+- has_many :members
 
 ## groups テーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|null:false,foreign_key:true|
-|name|string|null:false|
+|Column|Type   |Options                    |
+|------|-------|---------------------------|
+|id    |integer|null:false,foreign_key:true|
+|name  |string |null:false                 |
+## Association
+- has_many :users,through :members
+-  has_many :members
 
+## messages テーブル
+|Column  |Type|Options|
+|--------|-------|-----------|
+|id      |integer|null: false|
+|text    |text   |null: true |
+|image   |string |null: true |
+|group_id|integer|null:false |
+|user_id |integer|null:false |
+## Association
+- belongs_to :users
+- belongs_to :messages
 
 ## members 中間テーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|Column |Type|Options                            |
+|--------|-------|-------------------------------|
+|user_id |integer|null: false, foreign_key: true |
+|group_id|integer|null: false, foreign_key: true |
 
 ### Association
 - belongs_to :group
