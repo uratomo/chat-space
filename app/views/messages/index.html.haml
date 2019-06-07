@@ -29,10 +29,14 @@
           %p.message__info__user test-user
           %p.message__info__date  2019/05/25(Sat)
         .message__text   こんにちは
+        .message__info
+          %p.message__info__user user1
+          %p.message__info__date  2019/05/25(Sat)
+        .message__text   おかえり  
     %form(action=""class="form")
       .newMessage
         %input(type="text" placeholder="メッセージをお書きください" class="inputBox")
-          .inputBox__image-label
+          .inputBox__imageLabel
         .newMessage__btn
         
       

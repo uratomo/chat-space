@@ -1,6 +1,6 @@
-@mixin test-user{
-  font-size:16px;
-  color:#333333;
+@mixin user($size,$color){
+  font-size:$size;
+  color:$color;
   font-weight:bold;
 }
 

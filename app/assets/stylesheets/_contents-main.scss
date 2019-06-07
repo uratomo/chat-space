@@ -1,6 +1,5 @@
 .contents-main{
-  width:100vh;
-  height:100vh;
+  
   .header{
       padding:0px 40px 0px;
     border-bottom:solid 1px #eeeeee;
@@ -8,13 +7,13 @@
       padding-top:35px;
       &__name{
         font-size:20px;
-        color:#333333;
+        color:$black;
         padding-bottom:15px;
         position:relative;
       }
       .membetList__member{
       font-size:12px;
-      color:#999999;
+      color:$grey;
       }
     
      
@@ -31,13 +30,15 @@
   }
   .messages{
     background-color:#fafafa;
+    padding:0px 40px;
+    
     .message{
       padding-top:46px;
       &__info{
         display:flex;
       
         &__user{
-         @include test-user;
+         @include user(16px,$black);
          padding-bottom:15px;
         }
         &__date{
@@ -45,7 +46,35 @@
           
         }
       }
+      &__text{
+        padding:10px 0px 40px;
+        
+      }
     }
     
   }
+
+  .form{
+    background-color:#ddd;
+    padding:20px 40px;
+      height:50px;
+      .newMessage{
+        display:flex;
+        .inputBox{
+          height:50px;
+        }
+          &__imageLabel{
+
+          }
+        &__btn{
+          color:$white;
+          padding:0px 30px;
+          background-color:$skyblue;
+          line-height:50px;
+          margin-left:15px;
+
+        }  
+      }
+  }
+  
 }
