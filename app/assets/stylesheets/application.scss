@@ -1,7 +1,8 @@
 @import "./reset";
 @import "./variable";
 @import "font-awesome";
-@import "./mixin";
+@import "modules/user";
+@import "mixins/mixin";
 @import "./contents-side";
 @import "contents-main";
 
