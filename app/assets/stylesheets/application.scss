@@ -1,9 +1,15 @@
 @import "./reset";
 @import "./variable";
 @import "font-awesome";
-@import "./mixin";
+@import "modules/user";
+@import "mixins/mixin";
 @import "./contents-side";
 @import "contents-main";
+@import "config/colors";
+@import "modules/flash";
+@import "modules/group";
+@import "modules/chat";
+@import "modules/side_bar";
 
 
 // layout

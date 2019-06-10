@@ -1,0 +1,11 @@
+@mixin user($size,$color){
+  font-size:$size;
+  color:$color;
+  font-weight:bold;
+}
+
+@mixin date{
+  font-size:12px;
+  color:#999999;  
+  margin-left:10px; 
+      }
