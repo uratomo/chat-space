@@ -1,24 +1,7 @@
 
 .flashBox グループを作成しました。
 .contents
-  .contents-side
-    .header
-      %p.userName 
-        = current_user.name 
-      %ul.userMenu
-        %li.userMenu__editUser
-          =link_to new_group_path, class: "Contents__btn" do
-            = fa_icon 'edit'
-        %li.userMenu__newGroup
-          =link_to edit_user_path(current_user), class: "Contents__btn" do
-            = fa_icon 'cog'
-    .groups  
-      .group
-        %p.group__groupName  グループ
-        %p.group__latestMessage  こんにちは
-      .group
-        %p.group__groupName  グループ２
-        %p.group__latestMessage  ２番手
+  = render 'shared/side_bar'
   .contents-main
     .header
       .currentGroup
