@@ -1,21 +1,22 @@
-.contents
-  = render 'shared/side_bar'
-  .contents-main
-    .header
-      .currentGroup
-        .currentGroup__name test_group
-        %ul.memberList 
-          %li.memberList__member Member:tomo
-      .edit-btn 
+
+= render 'shared/side_bar'
+.chat  
+  .header
+    .left-header
+      .left-header__title test_group
+      %ul.left-header__members
+        %li.member Member:tomo
+    .right-header 
+      .right-header__button 
         =link_to  "https://www.sample.com/", class: "btn" do
           Edit
-    .messages
-      = render partial: 'message', collection: @messages
-    .form
-      = form_for [@group,@message] do |f|
-        =f.text_field :content, class: "form__message", placeholder: "type a message"
-        .form__mask
-          = f.label :image,class: 'form__mask__image' do
-            = fa_icon "picture-o",class: "icon"
-            = f.file_field :image,class: "hidden"
-        =f.submit "send",class:  "form__submit"
+  .messages
+    = render partial: 'message', collection: @messages
+  .form
+    = form_for [@group,@message] do |f|
+      =f.text_field :content, class: "form__message", placeholder: "type a message"
+      .form__mask
+        = f.label :image,class: 'form__mask__image' do
+          = fa_icon "picture-o",class: "icon"
+          = f.file_field :image,class: "hidden"
+      =f.submit "send",class:  "form__submit"
