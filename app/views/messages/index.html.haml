@@ -12,8 +12,7 @@
         =link_to  "https://www.sample.com/", class: "btn" do
           Edit
     .messages
-      = render  @messages
-     
+      = render partial: 'message', collection: @messages
     .form
       = form_for [@group,@message] do |f|
         =f.text_field :content, class: "form__message", placeholder: "type a message"
