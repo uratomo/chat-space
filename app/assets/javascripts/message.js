@@ -35,8 +35,8 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $(".messages").append(html)
-      $("#message_content").val("")
-      console.log(data)
+      $("#new_message")[0].reset();
+     
     })
     .fail(function(){
       alert("そのメッセージは無効です。") 
