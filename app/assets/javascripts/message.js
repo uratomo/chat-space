@@ -30,9 +30,9 @@ $(document).on('turbolinks:load', function(){
       processData: false,
       contentType: false,
     })
-    .done(function(data){
+    .done(function(message){
       console.log("data")
-      var html = buildHTML(data);
+      var html = buildHTML(message);
       $(".messages").append(html);
       $("#new_message")[0].reset();
       $(".form__submit").prop("disabled",false);
