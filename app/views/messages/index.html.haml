@@ -12,6 +12,7 @@
           Edit
   .messages
     = render partial: 'message', collection: @messages
+    .lastPosition
   .form
     = form_for [@group,@message] do |f|
       =f.text_field :content, class: "form__message", placeholder: "type a message"

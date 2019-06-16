@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
    function buildHTML(message){
     var html = `<div class="message">
                   <div class="upper-message">
@@ -19,7 +19,7 @@ $(function(){
     return html;
    }
 
-  $("#new_message").on("submit",".unselected",function(e){
+  $("#new_message").on("submit",function(e){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr("action")
@@ -33,13 +33,16 @@ $(function(){
       contentType: false,
     })
     .done(function(data){
+      console.log("data")
       var html = buildHTML(data);
-      $(".messages").append(html)
+      $(".messages").append(html);
       $("#new_message")[0].reset();
-     
+      $(".form__submit").prop("disabled",false);
+      $(".messages").animate({scrollTop: $(".messages")[0].scrollHeight}, "fast");  
     })
     .fail(function(){
       alert("そのメッセージは無効です。") 
+      $(".form__submit").prop("disabled",false);
     })
   });
 });
