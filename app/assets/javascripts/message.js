@@ -31,7 +31,6 @@ $(document).on('turbolinks:load', function(){
       contentType: false,
     })
     .done(function(message){
-      console.log("data")
       var html = buildHTML(message);
       $(".messages").append(html);
       $("#new_message")[0].reset();
