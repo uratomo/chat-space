@@ -6,6 +6,7 @@ def new
 end
 
 def create
+  
   @group = Group.new(group_params)
   if @group.save
     redirect_to root_path, notice: 'グループを作成しました'
@@ -15,6 +16,7 @@ def create
 end
 
 def edit
+  @users = @group.users.where.not(id:current_user.id) 
   
 end
 

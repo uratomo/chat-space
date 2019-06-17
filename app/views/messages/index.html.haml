@@ -8,7 +8,7 @@
         %li.member Member:tomo
     .right-header 
       .right-header__button 
-        =link_to  "https://www.sample.com/", class: "btn" do
+        =link_to   edit_group_path(@group.id), class: "btn" do
           Edit
   .messages
     = render partial: 'message', collection: @messages
