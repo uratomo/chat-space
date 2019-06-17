@@ -16,6 +16,7 @@ def create
 end
 
 def edit
+  @users = @group.users.where.not(id:current_user.id) 
   
 end
 

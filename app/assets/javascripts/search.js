@@ -27,14 +27,13 @@ $(function(){
     $("#chat-group-users").append(html)
     $(`#chat-group-user-${id}`).parent().remove()
   }
-
   $("#user-search-field").on("keyup",function(){
     var input = $("#user-search-field").val();
 
     $.ajax({
       type: "GET",
       url:  "/users/index",
-      data: {keyword: input,},
+      data: {keyword: input},
       dataType: "json"
     })
 
@@ -43,24 +42,23 @@ $(function(){
       if (users.length !== 0) {
           users.forEach(function(user){
           appendHTML(user);
-            $(document).on("click", `#chat-group-user-${user.id}`, function (){
-              var memberId = $(this).data("user-id");
-              var memberName = $(this).data("user-name");
-                apppendMemberlist(memberId , memberName)
-
-            }) 
-            $(document).on("click",`.chat-group-user__btn--remove`,function(){
-              $(this).parent().remove()
-            })
         });
       }
       else {
         appendErrMsgToHTML("一致するメンバーはいません");
       }
     })
-
     .fail(function(){
       alert("ユーザー検索に失敗しました")
     })
+  })
+
+  $(document).on("click", `.chat-group-user__btn--add`, function (){
+    var memberId = $(this).data("user-id");
+    var memberName = $(this).data("user-name");
+      apppendMemberlist(memberId , memberName)
+  }) 
+  $(document).on("click",`.chat-group-user__btn--remove`,function(){
+    $(this).parent().remove()
   })
 })
