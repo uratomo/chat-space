@@ -32,7 +32,7 @@ $(function(){
 
     $.ajax({
       type: "GET",
-      url:  "/user",
+      url:  "/users",
       data: {keyword: input},
       dataType: "json"
     })

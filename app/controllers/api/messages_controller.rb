@@ -1,9 +1,9 @@
 class Api::MessagesController < ApplicationController
   def index
-    @messages = Message.all
+    @messages =  Message.where('id > ?' , params[:id])
     respond_to do |format| 
       format.html 
-      format.json { @new_message = Message.where('id > ?', params[:message][:id]) } 
+      format.json  
     end
   end
 end
