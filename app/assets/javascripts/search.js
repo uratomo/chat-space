@@ -42,7 +42,7 @@ $(function(){
       if (users.length !== 0) {
           users.forEach(function(user){
           appendHTML(user);
-        });
+        }); 
       }
       else {
         appendErrMsgToHTML("一致するメンバーはいません");
