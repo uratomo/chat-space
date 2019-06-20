@@ -46,7 +46,6 @@ namespace :deploy do
   before :starting, 'deploy:upload'
   after :finishing, 'deploy:cleanup'
 end
-end
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
