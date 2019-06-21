@@ -71,5 +71,5 @@ $(document).on('turbolinks:load', function(){
     });
     };
    }
-    setInterval(reloadMessages, 500000);
+    setInterval(reloadMessages, 5000);
 });
