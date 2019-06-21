@@ -48,6 +48,7 @@ $(document).on('turbolinks:load', function(){
 
 
   var reloadMessages = function() {
+    if ( window.location.href.match(/\/groups\/\d+\/messages/)) { 
     last_message_id = $(".message:last").data("id");
     last_message_group_id = $(".message:last").data("group-id");
     $.ajax({
@@ -69,8 +70,8 @@ $(document).on('turbolinks:load', function(){
       alert('自動更新に失敗しました。');
     });
     };
-  
-    if ( document.URL.match(/\/groups\/\d+\/messages/)) { 
+   }
+    if ( window.location.href.match(/\/groups\/\d+\/messages/)) { 
     setInterval(reloadMessages, 5000);
-    }
+    
 });
